@@ -1,0 +1,33 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+
+        testPackageName "org.onepf.oms.tests"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+        testFunctionalTest true
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+        instrumentTest {
+            manifest.srcFile 'tests/AndroidManifest.xml'
+            java.srcDirs 'tests/src'
+            resources.srcDirs 'tests/src'
+        }
+    }
+}

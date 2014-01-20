@@ -174,3 +174,7 @@ gen/
 *.so
 *.so.meta
 
+#Gradle
+.gradle
+build
+

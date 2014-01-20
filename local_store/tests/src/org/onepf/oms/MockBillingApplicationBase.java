@@ -2,9 +2,11 @@ package org.onepf.oms;
 
 import android.content.SharedPreferences;
 import android.test.mock.MockApplication;
+
 import org.onepf.oms.data.Database;
 
 import java.util.Map;
+import java.util.Set;
 
 public class MockBillingApplicationBase extends MockApplication implements IBillingApplication {
 
@@ -54,6 +56,11 @@ public class MockBillingApplicationBase extends MockApplication implements IBill
             }
 
             @Override
+            public Set<String> getStringSet(String key, Set<String> defValues) {
+                return null;
+            }
+
+            @Override
             public Editor edit() {
                 return new Editor() {
                     @Override
@@ -94,6 +101,16 @@ public class MockBillingApplicationBase extends MockApplication implements IBill
                     @Override
                     public boolean commit() {
                         return false;
+                    }
+
+                    @Override
+                    public Editor putStringSet(String key, Set<String> values) {
+                        return null;
+                    }
+
+                    @Override
+                    public void apply() {
+
                     }
                 };
             }

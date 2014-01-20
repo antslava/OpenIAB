@@ -1,0 +1,12 @@
+// OpenIAB SDK
+include ':library'
+
+// Tests
+include 'TrivialDrive'
+project(':TrivialDrive').projectDir = new File('samples/trivialdrive')
+
+include 'LifeOpenIAB'
+project(':LifeOpenIAB').projectDir = new File('samples/life_openiab')
+
+include 'LocalStore'
+project(':LocalStore').projectDir = new File('local_store')
